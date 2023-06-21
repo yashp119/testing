@@ -12,7 +12,7 @@ jobs:
     - name: Checkout the code
       uses: actions/checkout@v2
     - name: Install WordPress
-      uses: ncipollo/WordPress-Installer@v2.2.0
+      uses: t0m4r10/WordPress-Installer-Action@v1.6.1
       with:
         version: 5.9.3
     - name: Deploy to EC2
