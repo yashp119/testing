@@ -12,7 +12,7 @@ jobs:
     - name: Checkout the code
       uses: actions/checkout@v2
     - name: Install WordPress
-      uses: 88158284/wordpress-installer@v1
+      uses: ncipollo/WordPress-Installer@v2.2.0
       with:
         version: 5.9.3
     - name: Deploy to EC2
@@ -23,4 +23,5 @@ jobs:
         REMOTE_HOST: ${{ secrets.EC2_HOST }}
         REMOTE_USER: ${{ secrets.EC2_USER }}
         TARGET: "/var/www/html"
+
 
