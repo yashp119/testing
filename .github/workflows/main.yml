@@ -12,9 +12,9 @@ jobs:
     - name: Checkout the code
       uses: actions/checkout@v2
     - name: Install WordPress
-      uses: t0m4r10/WordPress-Installer-Action@v1.6.1
-      with:
-        version: 5.9.3
+      run: |
+        sudo apt update
+        sudo apt install wordpress
     - name: Deploy to EC2
       uses: easingthemes/ssh-deploy@v2.1.5
       env:
@@ -23,5 +23,6 @@ jobs:
         REMOTE_HOST: ${{ secrets.EC2_HOST }}
         REMOTE_USER: ${{ secrets.EC2_USER }}
         TARGET: "/var/www/html"
+
 
 
